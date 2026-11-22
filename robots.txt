@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://lanternlearninglabkatie.github.io/lantern-learning-lab-site/sitemap.xml
+Sitemap: https://lanternlearninglabkatie.github.io/winter-wonderland-unit/sitemap.xml

@@ -1,4 +1,5 @@
-/* Lantern Learning Lab — guide site. Brand: periwinkle / navy / ice / flame. */
+/* Lantern Learning Lab — guide site. Brand: navy / gold / periwinkle / ice / flame / soft pink.
+   Visual language borrows the diagonal color-block look from Katie's letterhead. */
 
 @font-face {
   font-family: 'Fredoka';
@@ -14,8 +15,11 @@
 }
 
 :root {
-  --periwinkle: #5E78D0;
   --navy: #17214D;
+  --navy-deep: #0D1530;
+  --gold: #A9922C;       /* the olive/gold from the real wordmark + flame icon */
+  --gold-text: #7A6A1E;
+  --periwinkle: #5E78D0;
   --ice: #E9F8FE;
   --flame: #F5A63B;
   --flame-text: #9a5d14;
@@ -24,10 +28,8 @@
   --pink-tint: #FCEFF3;
   --grey: #5A6480;
   --border: #D7DCE8;
-  --a1: #3E7BD9; /* ages 3-5 */
-  --a2: #7C5CC7; /* ages 6-9 */
-  --a3: #1C8C8C; /* ages 10-12 */
   --max: 780px;
+  --wide: 1000px;
 }
 
 * { box-sizing: border-box; }
@@ -39,9 +41,10 @@ body {
   background: #fff;
   line-height: 1.6;
   font-size: 18px;
+  overflow-x: hidden;
 }
 h1, h2, h3 { font-family: 'Fredoka', system-ui, sans-serif; color: var(--navy); font-weight: 600; line-height: 1.2; }
-h1 { font-size: 2.1rem; margin: 0 0 0.4em; }
+h1 { font-size: 2.3rem; margin: 0 0 0.4em; }
 h2 { font-size: 1.5rem; margin: 1.6em 0 0.5em; }
 h3 { font-size: 1.15rem; color: var(--periwinkle); margin: 1.4em 0 0.4em; }
 p { margin: 0 0 1.1em; }
@@ -50,24 +53,67 @@ a:hover { color: var(--navy); }
 ul, ol { padding-left: 1.3em; margin: 0 0 1.1em; }
 li { margin-bottom: 0.4em; }
 
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+.wrap.wide { max-width: var(--wide); }
 
+/* ---------- Header: navy bar + gold diagonal wedge, like the letterhead ---------- */
 header.site {
-  border-bottom: 3px solid var(--periwinkle);
-  background: #fff;
+  position: relative;
+  background: var(--navy);
+  overflow: hidden;
 }
-header.site .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; max-width: 980px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+header.site::after {
+  content: "";
+  position: absolute; top: 0; right: 0;
+  width: 64px; height: 64px;
+  background: var(--gold);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+header.site .bar {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 0; max-width: 1020px; margin: 0 auto; padding-left: 20px; padding-right: 32px;
+}
 header.site .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-header.site .brand img { width: 40px; height: 40px; }
-header.site .brand span { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--navy); font-size: 1.15rem; }
-nav.main { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.95rem; }
-nav.main a { color: var(--navy); font-weight: 700; text-decoration: none; }
-nav.main a:hover { color: var(--periwinkle); }
+header.site .brand img { width: 38px; height: 38px; filter: brightness(0) invert(1); }
+header.site .brand span { font-family: 'Fredoka', sans-serif; font-weight: 600; color: #fff; font-size: 1.1rem; }
+nav.main { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.92rem; }
+nav.main a { color: #dfe4f4; font-weight: 700; text-decoration: none; padding: 4px 2px; border-bottom: 2px solid transparent; }
+nav.main a:hover { color: #fff; border-bottom-color: var(--flame); }
 
-main { padding: 36px 0 60px; }
+main { position: relative; padding: 0 0 60px; }
+
+/* ---------- Hero (homepage) ---------- */
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--ice) 0%, #fff 100%);
+  padding: 46px 0 38px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.hero .watermark {
+  position: absolute; top: -40px; right: -60px;
+  width: 360px; height: 360px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+.hero h1 { max-width: 620px; }
+.hero .lede { max-width: 560px; }
+
+/* ---------- Page header (guide/service/about/contact pages) ---------- */
+.page-top { padding: 34px 0 6px; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 0.78rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: #fff; background: var(--periwinkle);
+  padding: 5px 13px; border-radius: 999px; margin-bottom: 14px;
+}
+.kicker.service { background: var(--flame); }
+.kicker.about, .kicker.contact { background: var(--pink-text); }
 
 .badge-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 1.4em; }
-.badge-row img { width: 96px; height: auto; border-radius: 6px; }
+.badge-row img { width: 92px; height: auto; border-radius: 6px; flex-shrink: 0; }
 
 .lede { font-size: 1.15rem; color: var(--grey); }
 
@@ -96,18 +142,30 @@ table.compare { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-si
 table.compare th, table.compare td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
 table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fredoka', sans-serif; }
 
-.cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 1.4em 0; }
+/* ---------- Cards: rounded, shadowed, color-tabbed ---------- */
+.cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 1.4em 0; }
 .card {
+  position: relative;
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px 20px;
+  border-radius: 16px;
+  padding: 22px 22px 20px;
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: border-color .15s, transform .15s;
+  box-shadow: 0 2px 10px rgba(23,33,77,0.06);
+  transition: box-shadow .15s, transform .15s;
 }
-.card:hover { border-color: var(--periwinkle); transform: translateY(-2px); }
-.card h3 { margin-top: 0; color: var(--navy); }
+.card::before {
+  content: "";
+  position: absolute; top: 0; left: 22px; right: 22px; height: 5px;
+  border-radius: 0 0 4px 4px;
+  background: var(--periwinkle);
+}
+.cards .card:nth-child(3n+2)::before { background: var(--flame); }
+.cards .card:nth-child(3n+3)::before { background: var(--pink); }
+.card:hover { box-shadow: 0 8px 22px rgba(23,33,77,0.13); transform: translateY(-3px); }
+.card h3 { margin-top: 6px; color: var(--navy); }
 .card p { margin-bottom: 0; color: var(--grey); font-size: 0.97rem; }
 
 .price-row {
@@ -122,13 +180,34 @@ table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fre
   background: var(--flame);
   color: #fff;
   font-weight: 800;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 999px;
   text-decoration: none;
-  margin: 0.4em 0 1em;
+  margin: 0.4em 0.5em 1em 0;
+  box-shadow: 0 4px 14px rgba(245,166,59,0.35);
 }
 .btn:hover { background: var(--flame-text); color: #fff; }
-.btn.secondary { background: var(--navy); }
+.btn.navy { background: var(--navy); box-shadow: 0 4px 14px rgba(23,33,77,0.3); }
+.btn.navy:hover { background: var(--navy-deep); }
+.btn.pink { background: var(--pink); color: var(--pink-text); box-shadow: 0 4px 14px rgba(232,160,180,0.4); }
+.btn.pink:hover { background: var(--pink-text); color: #fff; }
+
+/* ---------- Person card (About page) ---------- */
+.person {
+  display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start;
+  margin: 1.4em 0 2em;
+}
+.person img {
+  width: 150px; height: 150px; object-fit: cover; border-radius: 50%;
+  border: 4px solid #fff; box-shadow: 0 6px 20px rgba(23,33,77,0.18);
+}
+.person-inline {
+  display: flex; align-items: center; gap: 14px; margin: 0 0 1.4em;
+}
+.person-inline img {
+  width: 64px; height: 64px; object-fit: cover; border-radius: 50%;
+  border: 3px solid #fff; box-shadow: 0 3px 10px rgba(23,33,77,0.18); flex-shrink: 0;
+}
 
 .source {
   font-size: 0.85rem; color: var(--grey); border-top: 1px solid var(--border);
@@ -136,10 +215,29 @@ table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fre
 }
 .source em { font-style: italic; }
 
+/* ---------- Footer: mirrors the header's color block ---------- */
 footer.site {
-  background: var(--navy); color: #cdd4ea; padding: 30px 0; margin-top: 50px;
+  position: relative;
+  background: var(--navy);
+  color: #cdd4ea;
+  padding: 34px 0 26px;
+  margin-top: 54px;
+  overflow: hidden;
 }
-footer.site .wrap { max-width: 980px; }
+footer.site::before {
+  content: "";
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 180px;
+  background: var(--gold);
+  clip-path: polygon(0 0, 55% 0, 20% 100%, 0 100%);
+  opacity: 0.9;
+}
+footer.site .wrap { max-width: 1020px; }
+.foot-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.foot-brand img { width: 40px; height: 40px; filter: brightness(0) invert(1); flex-shrink: 0; }
+.foot-brand div { display: flex; flex-direction: column; line-height: 1.3; }
+.foot-brand strong { font-family: 'Fredoka', sans-serif; color: #fff; font-size: 1.1rem; font-weight: 600; }
+.foot-brand span { color: #c9b96a; font-size: 0.92rem; font-style: italic; }
 footer.site a { color: #fff; }
 footer.site .fine { font-size: 0.85rem; color: #9aa4c9; margin-top: 10px; }
 
@@ -147,8 +245,12 @@ footer.site .fine { font-size: 0.85rem; color: #9aa4c9; margin-top: 10px; }
 .pill-list li { padding-left: 1.5em; position: relative; }
 .pill-list li::before { content: "→"; position: absolute; left: 0; color: var(--periwinkle); font-weight: 800; }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   body { font-size: 16.5px; }
-  h1 { font-size: 1.7rem; }
-  header.site .bar { flex-direction: column; align-items: flex-start; }
+  h1 { font-size: 1.85rem; }
+  header.site::after { width: 38px; height: 38px; }
+  .hero .watermark { width: 220px; height: 220px; top: -20px; right: -50px; }
+  nav.main { gap: 12px; }
+  .person { grid-template-columns: 1fr; text-align: center; }
+  .person img { margin: 0 auto; }
 }
