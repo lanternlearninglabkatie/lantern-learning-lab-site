@@ -15,19 +15,20 @@
 }
 
 :root {
-  --navy: #17214D;
-  --navy-deep: #0D1530;
-  --gold: #A9922C;       /* the olive/gold from the real wordmark + flame icon */
-  --gold-text: #7A6A1E;
+  --navy: #0f1c8f;        /* Katie's chosen blue */
+  --navy-deep: #0a1366;
+  --gold: #9f9221;        /* Katie's chosen gold */
+  --gold-text: #6e6517;
   --periwinkle: #5E78D0;
-  --ice: #E9F8FE;
+  --ice: #EDEFFB;         /* soft tint of the blue, for section backgrounds */
   --flame: #F5A63B;
   --flame-text: #9a5d14;
-  --pink: #E8A0B4;
-  --pink-text: #9c4f63;
-  --pink-tint: #FCEFF3;
+  --pink: #B76E79;        /* Katie's chosen pink */
+  --pink-text: #8a4e57;
+  --pink-tint: #F8ECEE;   /* soft tint of the pink, for section backgrounds */
+  --cream: #FFFBF4;       /* warm off-white, replaces stark white as the page base */
   --grey: #5A6480;
-  --border: #D7DCE8;
+  --border: #E3D9D2;
   --max: 780px;
   --wide: 1000px;
 }
@@ -38,10 +39,19 @@ body {
   margin: 0;
   font-family: 'Nunito', system-ui, sans-serif;
   color: #20262E;
-  background: #fff;
+  background: var(--cream);
   line-height: 1.6;
   font-size: 18px;
   overflow-x: hidden;
+}
+
+/* Soft organic "blob" shapes — a warmer alternative to hard edges, used
+   as decorative background accents behind hero and section content. */
+.blob {
+  position: absolute;
+  border-radius: 62% 38% 56% 44% / 48% 40% 60% 52%;
+  z-index: 0;
+  pointer-events: none;
 }
 h1, h2, h3 { font-family: 'Fredoka', system-ui, sans-serif; color: var(--navy); font-weight: 600; line-height: 1.2; }
 h1 { font-size: 2.3rem; margin: 0 0 0.4em; }
