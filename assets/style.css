@@ -96,24 +96,49 @@ nav.main { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.92rem; }
 nav.main a { color: #dfe4f4; font-weight: 700; text-decoration: none; padding: 4px 2px; border-bottom: 2px solid transparent; }
 nav.main a:hover { color: #fff; border-bottom-color: var(--flame); }
 
-main { position: relative; padding: 0 0 60px; }
+main { position: relative; padding: 0; }
 
-/* ---------- Hero (homepage) ---------- */
+/* ---------- Hero (homepage): text + a tilted polaroid photo, blobs behind ---------- */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--ice) 0%, #fff 100%);
-  padding: 46px 0 38px;
+  background: var(--pink-tint);
+  padding: 50px 0 60px;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
 }
+.hero .blob.b1 { width: 420px; height: 420px; top: -140px; right: -100px; background: var(--ice); opacity: 0.9; }
+.hero .blob.b2 { width: 260px; height: 260px; bottom: -90px; right: 180px; background: #fff; opacity: 0.6; }
 .hero .watermark {
-  position: absolute; top: -40px; right: -60px;
-  width: 360px; height: 360px;
-  opacity: 0.07;
+  position: absolute; top: -30px; left: -70px;
+  width: 260px; height: 260px;
+  opacity: 0.06;
   pointer-events: none;
 }
-.hero h1 { max-width: 620px; }
-.hero .lede { max-width: 560px; }
+.hero-grid {
+  display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 36px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero h1 { max-width: 560px; }
+.hero .lede { max-width: 520px; }
+.polaroid {
+  background: #fff;
+  padding: 14px 14px 36px;
+  border-radius: 6px;
+  box-shadow: 0 14px 34px rgba(15,28,143,0.18);
+  transform: rotate(-4deg);
+  max-width: 300px;
+  margin: 0 auto;
+}
+.polaroid img { width: 100%; display: block; border-radius: 2px; }
+.polaroid figcaption {
+  font-family: 'Fredoka', sans-serif; color: var(--navy); text-align: center;
+  margin-top: 10px; font-size: 1rem;
+}
+
+/* ---------- Full-width tinted sections, alternating with the cream page body ---------- */
+.band { position: relative; padding: 48px 0; overflow: hidden; }
+.band.ice { background: var(--ice); }
+.band.pink { background: var(--pink-tint); }
+.band .blob { opacity: 0.6; }
 
 /* ---------- Page header (guide/service/about/contact pages) ---------- */
 .page-top { padding: 34px 0 6px; }
@@ -204,7 +229,7 @@ table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fre
 .btn:hover { background: var(--flame-text); color: #fff; }
 .btn.navy { background: var(--navy); box-shadow: 0 4px 14px rgba(23,33,77,0.3); }
 .btn.navy:hover { background: var(--navy-deep); }
-.btn.pink { background: var(--pink); color: var(--pink-text); box-shadow: 0 4px 14px rgba(232,160,180,0.4); }
+.btn.pink { background: var(--pink); color: #fff; box-shadow: 0 4px 14px rgba(183,110,121,0.4); }
 .btn.pink:hover { background: var(--pink-text); color: #fff; }
 
 /* ---------- Person card (About page) ---------- */
@@ -273,4 +298,9 @@ footer.site .fine { font-size: 0.85rem; color: #9aa4c9; margin-top: 10px; }
   nav.main { gap: 12px; }
   .person { grid-template-columns: 1fr; text-align: center; }
   .person img { margin: 0 auto; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid figure.polaroid { order: -1; max-width: 220px; }
+  .hero .blob.b1 { width: 260px; height: 260px; top: -90px; right: -70px; }
+  .hero .blob.b2 { display: none; }
+  .person-inline { flex-direction: column; text-align: center; }
 }
