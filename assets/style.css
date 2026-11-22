@@ -1,0 +1,154 @@
+/* Lantern Learning Lab — guide site. Brand: periwinkle / navy / ice / flame. */
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('fonts/Fredoka.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito.ttf') format('truetype');
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+:root {
+  --periwinkle: #5E78D0;
+  --navy: #17214D;
+  --ice: #E9F8FE;
+  --flame: #F5A63B;
+  --flame-text: #9a5d14;
+  --pink: #E8A0B4;
+  --pink-text: #9c4f63;
+  --pink-tint: #FCEFF3;
+  --grey: #5A6480;
+  --border: #D7DCE8;
+  --a1: #3E7BD9; /* ages 3-5 */
+  --a2: #7C5CC7; /* ages 6-9 */
+  --a3: #1C8C8C; /* ages 10-12 */
+  --max: 780px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: #20262E;
+  background: #fff;
+  line-height: 1.6;
+  font-size: 18px;
+}
+h1, h2, h3 { font-family: 'Fredoka', system-ui, sans-serif; color: var(--navy); font-weight: 600; line-height: 1.2; }
+h1 { font-size: 2.1rem; margin: 0 0 0.4em; }
+h2 { font-size: 1.5rem; margin: 1.6em 0 0.5em; }
+h3 { font-size: 1.15rem; color: var(--periwinkle); margin: 1.4em 0 0.4em; }
+p { margin: 0 0 1.1em; }
+a { color: var(--periwinkle); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+a:hover { color: var(--navy); }
+ul, ol { padding-left: 1.3em; margin: 0 0 1.1em; }
+li { margin-bottom: 0.4em; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+header.site {
+  border-bottom: 3px solid var(--periwinkle);
+  background: #fff;
+}
+header.site .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; max-width: 980px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+header.site .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+header.site .brand img { width: 40px; height: 40px; }
+header.site .brand span { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--navy); font-size: 1.15rem; }
+nav.main { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.95rem; }
+nav.main a { color: var(--navy); font-weight: 700; text-decoration: none; }
+nav.main a:hover { color: var(--periwinkle); }
+
+main { padding: 36px 0 60px; }
+
+.badge-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 1.4em; }
+.badge-row img { width: 96px; height: auto; border-radius: 6px; }
+
+.lede { font-size: 1.15rem; color: var(--grey); }
+
+.callout {
+  background: #FFF6E6;
+  border-left: 5px solid var(--flame);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 1.4em 0;
+}
+.callout.blue { background: var(--ice); border-left-color: var(--periwinkle); }
+.callout.pink { background: var(--pink-tint); border-left-color: var(--pink); }
+.callout.pink h3 { color: var(--pink-text); }
+.callout p:last-child { margin-bottom: 0; }
+
+.tag {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--periwinkle);
+  margin: 0 0 0.6em;
+}
+.tag::before { content: "✓ "; }
+
+table.compare { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 0.96rem; }
+table.compare th, table.compare td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fredoka', sans-serif; }
+
+.cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 1.4em 0; }
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: var(--periwinkle); transform: translateY(-2px); }
+.card h3 { margin-top: 0; color: var(--navy); }
+.card p { margin-bottom: 0; color: var(--grey); font-size: 0.97rem; }
+
+.price-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 2px dotted var(--border); padding-bottom: 6px; margin: 1.6em 0 0.6em;
+}
+.price-row h2 { margin: 0; }
+.price-row .amt { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--flame-text); font-size: 1.3rem; white-space: nowrap; }
+
+.btn {
+  display: inline-block;
+  background: var(--flame);
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin: 0.4em 0 1em;
+}
+.btn:hover { background: var(--flame-text); color: #fff; }
+.btn.secondary { background: var(--navy); }
+
+.source {
+  font-size: 0.85rem; color: var(--grey); border-top: 1px solid var(--border);
+  margin-top: 2.5em; padding-top: 1em;
+}
+.source em { font-style: italic; }
+
+footer.site {
+  background: var(--navy); color: #cdd4ea; padding: 30px 0; margin-top: 50px;
+}
+footer.site .wrap { max-width: 980px; }
+footer.site a { color: #fff; }
+footer.site .fine { font-size: 0.85rem; color: #9aa4c9; margin-top: 10px; }
+
+.pill-list { list-style: none; padding: 0; margin: 0 0 1.4em; }
+.pill-list li { padding-left: 1.5em; position: relative; }
+.pill-list li::before { content: "→"; position: absolute; left: 0; color: var(--periwinkle); font-weight: 800; }
+
+@media (max-width: 560px) {
+  body { font-size: 16.5px; }
+  h1 { font-size: 1.7rem; }
+  header.site .bar { flex-direction: column; align-items: flex-start; }
+}
