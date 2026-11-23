@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Florida School Path Are You On? — Lantern Learning Lab</title>
+<meta name="description" content="Public school, Florida Virtual, private school, home education, or PEP — find your family's status and the one next step that fits it.">
+<link rel="icon" href="../assets/images/logo.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="../index.html"><span class="badge"><img src="../assets/images/logo.png" alt=""></span><span>Lantern Learning Lab</span></a>
+    <nav class="main">
+      <a href="index.html">Guides</a>
+      <a href="../services/evaluation.html">Evaluations</a>
+      <a href="../services/choice-navigator.html">Choice Navigator</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap page-card">
+    <div class="service-intro">
+      <h1>Which path are you on?</h1>
+      <p class="sub">Find your family's status, and the one next step that fits it.</p>
+    </div>
+
+    <div class="hub-row">
+      <div class="info">
+        <h3>Public school or Florida Virtual Full Time</h3>
+        <p>Your child is enrolled with the district or FLVS Full Time — both are still public school enrollment, just delivered differently.</p>
+      </div>
+      <div class="action"><a class="link" href="home-education-or-pep.html">Thinking about leaving? →</a></div>
+    </div>
+
+    <div class="hub-row">
+      <div class="info">
+        <h3>Private school</h3>
+        <p>Enrolled at a private school, including virtual private schools.</p>
+        <p class="note">FES-UA, grades 3–10: an evaluation with me can replace standardized testing</p>
+      </div>
+      <div class="action"><a class="btn pink" href="../services/evaluation.html">Book your evaluation →</a></div>
+    </div>
+
+    <div class="hub-row">
+      <div class="info">
+        <h3>Home Education</h3>
+        <p>Filed a letter of intent — the "traditional homeschool" path. An annual evaluation is required by Florida Statute 1002.41.</p>
+      </div>
+      <div class="action"><a class="btn pink" href="../services/evaluation.html">Book your evaluation →</a></div>
+    </div>
+
+    <div class="hub-row">
+      <div class="info">
+        <h3>PEP</h3>
+        <p>Personalized Education Program — its own scholarship status, separate from home education. No annual evaluation, but Choice Navigator help is a fit.</p>
+      </div>
+      <div class="action"><a class="btn pink" href="../services/choice-navigator.html">Book a Choice Navigator session →</a></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hub-banner">
+      <h2>Meltdowns to Momentum</h2>
+      <p>Whatever your path — if your child is melting down, resisting, or just isn't making progress, this is one consult to find out why and get a plan you can start using right away.</p>
+      <a class="btn pink" href="../contact.html">Book your consult — $125 →</a>
+    </div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-brand">
+      <span class="badge"><img src="../assets/images/logo.png" alt=""></span>
+      <div><strong>Lantern Learning Lab</strong><span>Lighting your path forward</span></div>
+    </div>
+    <p class="fine">This site explains general Florida home education rules as of the dates noted on each page. Rules change — always confirm anything time-sensitive with your own school district or the Florida Department of Education. Nothing here is legal advice.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var items = document.querySelectorAll('.hub-row, .hub-banner');
+  if (!('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in-view'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
