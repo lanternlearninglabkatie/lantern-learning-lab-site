@@ -386,3 +386,31 @@ footer.site .fine { font-size: 0.85rem; color: var(--pink); margin-top: 10px; ma
   .hub-row, .hub-banner { opacity: 1; transform: none; transition: none; }
   .hub-banner .btn.pink { animation: none; }
 }
+
+/* ---------- About page ---------- */
+.about-hero {
+  background: var(--pink); text-align: center; padding: 50px 24px 60px;
+}
+.about-hero img {
+  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  border: 5px solid #fff; box-shadow: 0 8px 24px rgba(23,33,77,0.2); margin-bottom: 16px;
+}
+.about-hero h1 { color: #fff; font-size: 2rem; margin: 0 0 10px; }
+.about-hero p { color: #fff; opacity: 0.95; max-width: 460px; margin: 0 auto; font-size: 1.05rem; }
+.scallop.about-scallop {
+  background-image: radial-gradient(circle at 14px 0, transparent 13px, var(--ice) 14px);
+  background-color: var(--pink);
+}
+
+ul.cred-check { list-style: none; padding: 0; margin: 0 0 1.4em; }
+ul.cred-check li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px dashed var(--border); }
+ul.cred-check li:last-child { border-bottom: none; }
+ul.cred-check li::before { content: "✓"; position: absolute; left: 0; color: var(--pink); font-weight: 800; }
+
+.bring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.4em 0; }
+.bring-item { background: var(--pink-tint); border-radius: 16px; padding: 18px 20px; }
+.bring-item h3 { font-size: 1rem; color: var(--pink-text); margin: 0 0 6px; }
+.bring-item p { font-size: 0.92rem; color: var(--grey); margin: 0; }
+@media (max-width: 640px) {
+  .bring-grid { grid-template-columns: 1fr; }
+}
