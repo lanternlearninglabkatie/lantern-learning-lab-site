@@ -88,23 +88,28 @@ nav.main a:hover { color: #fff; border-bottom-color: var(--pink); }
 
 main { position: relative; padding: 0 0 50px; }
 
-/* ---------- Hero (homepage): ice background, a faint watermark, a scalloped edge ---------- */
+/* ---------- Hero (homepage): one bold navy field, almost no words ---------- */
 .hero {
   position: relative;
-  background: var(--ice);
-  padding: 56px 0 0;
+  background: var(--navy);
+  padding: 64px 0 76px;
+  text-align: center;
   overflow: hidden;
 }
-.hero .watermark {
-  position: absolute; top: -30px; right: -50px;
-  width: 220px; height: 220px;
-  opacity: 0.08;
-  filter: grayscale(1);
-  pointer-events: none;
+.hero-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.hero .logo-circle {
+  width: 56px; height: 56px; border-radius: 50%; background: #fff;
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px;
 }
-.hero-inner { padding-bottom: 40px; position: relative; z-index: 1; }
-.hero h1 { max-width: 540px; }
-.hero .lede { max-width: 490px; }
+.hero .logo-circle img { width: 34px; height: 34px; }
+.hero .tagline { color: var(--pink); font-style: italic; font-size: 1.05rem; margin: 0 0 18px; }
+.hero h1 {
+  color: #fff; font-size: 2.6rem; line-height: 1.12; max-width: 100%;
+  margin: 0 0 26px;
+}
+.hero h1 .accent { color: var(--pink); }
+.hero .btn.pink { font-size: 1.1rem; padding: 15px 34px; }
+.hero .sub { color: #b9c2e8; font-size: 1.02rem; margin: 18px 0 0; }
 
 /* the scalloped (wavy-bump) edge between a tinted section and the white page */
 .scallop {
