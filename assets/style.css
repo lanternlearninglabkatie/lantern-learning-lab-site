@@ -278,7 +278,7 @@ table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fre
   padding: 26px; box-shadow: 0 8px 24px rgba(23,33,77,0.08); margin: 0 0 1.4em;
 }
 .bio-card img {
-  width: 120px; height: 100%; object-fit: cover; border-radius: 16px;
+  width: 90px; height: 100%; object-fit: cover; border-radius: 14px;
   box-shadow: 0 3px 10px rgba(23,33,77,0.18); flex-shrink: 0;
 }
 .bio-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
