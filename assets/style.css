@@ -261,7 +261,7 @@ table.compare th { background: var(--ice); color: var(--navy); font-family: 'Fre
   display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start;
   margin: 1.4em 0 2em;
 }
-.person img {
+.person > img {
   width: 150px; height: 150px; object-fit: cover; border-radius: 50%;
   border: 4px solid #fff; box-shadow: 0 6px 20px rgba(23,33,77,0.18);
 }
@@ -345,7 +345,7 @@ footer.site .fine { font-size: 0.85rem; color: var(--pink); margin-top: 10px; ma
   .hero .watermark { width: 150px; height: 150px; top: -15px; right: -35px; }
   nav.main { gap: 12px; }
   .person { grid-template-columns: 1fr; text-align: center; }
-  .person img { margin: 0 auto; }
+  .person > img { margin: 0 auto; }
   .person-inline { flex-direction: column; text-align: center; }
   footer.site::before { display: none; }
   footer.site .wrap { padding-left: 24px; }
