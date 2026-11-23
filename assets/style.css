@@ -392,8 +392,8 @@ footer.site .fine { font-size: 0.85rem; color: var(--pink); margin-top: 10px; ma
   background: var(--pink); text-align: center; padding: 50px 24px 60px;
 }
 .about-hero img {
-  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
-  border: 5px solid #fff; box-shadow: 0 8px 24px rgba(23,33,77,0.2); margin-bottom: 16px;
+  width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center 12%;
+  border: 6px solid #fff; box-shadow: 0 8px 24px rgba(23,33,77,0.2); margin-bottom: 16px;
 }
 .about-hero h1 { color: #fff; font-size: 2rem; margin: 0 0 10px; }
 .about-hero p { color: #fff; opacity: 0.95; max-width: 460px; margin: 0 auto; font-size: 1.05rem; }
