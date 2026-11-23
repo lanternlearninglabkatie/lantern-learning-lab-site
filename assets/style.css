@@ -140,7 +140,7 @@ main { position: relative; padding: 0 0 50px; }
   display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px;
 }
 .hero .logo-circle img { width: 52px; height: 52px; }
-.hero .tagline { color: var(--pink); font-style: italic; font-size: 1.05rem; margin: 0 0 18px; }
+.hero .tagline { color: var(--gold); font-style: italic; font-size: 1.05rem; margin: 0 0 18px; }
 .hero h1 {
   color: #fff; font-size: 2.6rem; line-height: 1.12; max-width: 100%;
   margin: 0 0 26px;
